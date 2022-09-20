@@ -16,7 +16,7 @@ export default function Home() {
 
 
         <div>
-        <Image  src="/shopdopbenner.png" alt="" width={1400} height={600} />
+        <img src="/shopdopbenner.png" alt="" width={1400} height={900} />
         </div>
 
 
