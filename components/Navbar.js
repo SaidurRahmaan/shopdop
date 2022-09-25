@@ -3,13 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineShoppingCart, AiFillCloseCircle, AiFillPlusCircle,AiFillMinusCircle } from "react-icons/ai";
 import { BsFillBagCheckFill } from "react-icons/bs";
+import { MdAccountCircle } from "react-icons/md";
 
 
 import { useRef } from "react";
 
-const Navbar = ({cart, addTocart, removeTocart, clearCart, subTotal }) => {
-
-
+const Navbar = ({cart, addTocart, removeTocart, clearCart,subTotal }) => {
 
   const togglecart = () => {
     if (ref.current.classList.contains("translate-x-full")) {
@@ -57,17 +56,13 @@ const Navbar = ({cart, addTocart, removeTocart, clearCart, subTotal }) => {
           </Link>
         </ul>
       </div>
-      <div
-        onClick={togglecart}
-        className="cart absolute right-0 top-4 mx-5 cursor-pointer"
-      >
-        <AiOutlineShoppingCart className=" text-xl md:text-2xl" />
+      <div className="cart absolute right-0 top-4 mx-5 cursor-pointer flex">
+       <Link href={'/login'}><MdAccountCircle className=" text-xl md:text-2xl mx-2 "/></Link>
+        <AiOutlineShoppingCart onClick={togglecart} className=" text-xl md:text-2xl" />
       </div>
 
       <div
-        ref={ref}
-        className="w-72 h-[100vh] sidecart absolute top-0 right-0 bg-pink-100 px-8 py-10  transform transition-transform translate-x-full  "
-      >
+        ref={ref} className={`w-72 h-[100vh] sidecart absolute top-0 right-0 bg-pink-100 px-8 py-10  transform transition-transform ${Object.keys(cart).length !==0  ? 'translate-x-0': 'translate-x-full' }`}>
         <h2 className="font-bold text-xl text-center">Shopping Cart</h2>
         <span
           onClick={togglecart}
@@ -85,7 +80,7 @@ const Navbar = ({cart, addTocart, removeTocart, clearCart, subTotal }) => {
             </div>
           </li>})}
  </ol>
-
+    <div className="font-bold my-2">SubTotal {subTotal}</div>
 
   <div className="flex">
    <Link href="/checkout"><button className="flex mr-2 text-white bg-indigo-500 border-0 py-2 px-2 focus:outline-none hover:bg-pink-600 rounded text-sm"><BsFillBagCheckFill className="m-1"/>CheckOut</button></Link>

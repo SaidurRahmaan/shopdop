@@ -16,7 +16,7 @@ const Tshirts = () => {
         <div className="mt-4 text-center md:text-left">
           <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-shirts</h3>
           <h2 className="text-gray-900 title-font text-lg font-medium">Nike -Shirts</h2>
-          <p className="mt-1">$21</p>
+          <p className="mt-1">$58</p>
           <p className="mt-1">S, M , L , X ,XL , XXL </p>
         </div>
       </div>

@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
 
   const [cart, setCart] = useState({})
 
-  const[subTotal , setSubTotal]= useState(0)
+  const[subTotal , setsubTotal]= useState(0)
 
 
 
@@ -15,12 +15,12 @@ function MyApp({ Component, pageProps }) {
     try {
       if(localStorage.getItem("cart")){
         setCart(JSON.parse(localStorage.getItem("cart")))
+        saveCart(JSON.parse(localStorage.getItem("cart")))
       }
       else{
   
       }
     } catch (error) {
-      console.error(error)
       localStorage.clear()
     }
   }, [])
@@ -28,14 +28,13 @@ function MyApp({ Component, pageProps }) {
 
 
   const saveCart =(myCart)=>{
-    localStorage.setItem("cart",JSON.stringify (myCart))
-    let subt = 0 
+    localStorage.setItem("cart",JSON.stringify(myCart))
+    let subt = 0
     let keys = Object.keys(myCart)
-    for(let i=0; i<keys.lenght; i++ ){
-      console.log(keys)
-      subt += mycart[keys[i]].price * mycart[keys[i]].qty;
+    for(let i=0; i<keys.lenght;i++ ){
+      subt += myCart[keys[i]]["price"] *  myCart[keys[i]].qty;
     }
-    setSubTotal(subt)
+    setsubTotal(subt)
   }
 
 
@@ -86,8 +85,8 @@ function MyApp({ Component, pageProps }) {
 
 
   return  <>
-  <Navbar cart={cart} addTocart={addTocart} removeTocart={removeTocart} clearCart={clearCart} subTotal={subTotal}/>
-  <Component cart={cart} addTocart={addTocart} removeTocart={removeTocart} clearCart={clearCart}  subTotal={subTotal} {...pageProps} />
+  <Navbar key={subTotal}  cart={cart} addTocart={addTocart} removeTocart={removeTocart} clearCart={clearCart} subTotal={subTotal}/>
+  <Component cart={cart} addTocart={addTocart} removeTocart={removeTocart} clearCart={clearCart} subTotal={subTotal} {...pageProps} />
   <Footer/>
   </>
   
