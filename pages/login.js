@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa";
 
 const login = () => {
   return (
@@ -49,6 +51,13 @@ const login = () => {
         </button>
       </div>
     </form>
+
+    <div className="flex">
+    
+    <Link href="/facebook.com"><button className="flex m-auto text-blue bg-white-500 border-0 py-2 px-2 focus:outline-none hover:bg-indigo-400 rounded text-xl"><FaFacebook className="m-1"/>Facebook</button></Link>
+    <Link href="/checkout"><button className="flex m-auto text-black bg-white-500 border-0 py-2 px-2 focus:outline-none hover:bg-pink-600 rounded text-xl"><FcGoogle className="m-1"/>Google</button></Link>
+     </div>
+
   </div>
 </div>
   )

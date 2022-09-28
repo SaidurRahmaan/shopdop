@@ -30,15 +30,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/shose": [
+    "/forgot": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/shose.js"
+      "static/chunks/pages/forgot.js"
     ],
-    "/tshirts": [
+    "/singup": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/tshirts.js"
+      "static/chunks/pages/singup.js"
     ]
   },
   "ampFirstPages": []

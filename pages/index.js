@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Herosection from './herosection'
 
 
 
@@ -16,6 +17,7 @@ export default function Home() {
 
 
         <div>
+        <Herosection />
         <img src="/shopdopbenner.png" alt="" width={1400} height={900} />
         </div>
 
